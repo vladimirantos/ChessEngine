@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Chess\King | ChessEngine</title>
+
+	<script type="text/javascript" src="resources/combined.js?1017043969"></script>
+	<script type="text/javascript" src="elementlist.js?3349509062"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Chess.html">Chess<span></span></a>
+						<ul>
+				<li><a href="namespace-Chess.Render.html">Render</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-Core.Exceptions.html">Exceptions</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Chess.Bishop.html">Bishop</a></li>
+				<li><a href="class-Chess.Board.html">Board</a></li>
+				<li><a href="class-Chess.ChessCell.html">ChessCell</a></li>
+				<li><a href="class-Chess.Game.html">Game</a></li>
+				<li class="active"><a href="class-Chess.King.html">King</a></li>
+				<li><a href="class-Chess.Knight.html">Knight</a></li>
+				<li><a href="class-Chess.Move.html">Move</a></li>
+				<li><a href="class-Chess.Pawn.html">Pawn</a></li>
+				<li><a href="class-Chess.Piece.html">Piece</a></li>
+				<li><a href="class-Chess.PieceColor.html">PieceColor</a></li>
+				<li><a href="class-Chess.PieceType.html">PieceType</a></li>
+				<li><a href="class-Chess.Queen.html">Queen</a></li>
+				<li><a href="class-Chess.Rook.html">Rook</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Chess.IMoveable.html">IMoveable</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Chess.html" title="Summary of Chess"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class King</h1>
+
+
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Core.Object.html"><span>Core\Object</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-Chess.Piece.html"><span>Chess\Piece</span></a>
+			
+			 implements 
+				<a href="class-Chess.IMoveable.html"><span>Chess\IMoveable</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Chess\King</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Chess.html">Chess</a><br />
+		
+
+				<b>Author:</b>
+				Vladimír Antoš<br />
+				<b>Version:</b>
+				1.0<br />
+		<b>Located at</b> <a href="source-class-Chess.King.html#5-26" title="Go to source code">library/Chess/King.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Chess.King.html#10-12" title="Go to source code">__construct</a>( <span><code><a href="class-Chess.PieceColor.html">Chess\PieceColor</a></code> <var>$color</var></span>, <span><code><a href="class-Chess.ChessCell.html">Chess\ChessCell</a></code> <var>$cell</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$color</var></dt>
+					<dd><code><code><a href="class-Chess.PieceType.html">Chess\PieceType</a></code></code><br>$type</dd>
+					<dt><var>$cell</var></dt>
+					<dd><code><code><a href="class-Chess.PieceColor.html">Chess\PieceColor</a></code></code><br>$color</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Chess.Piece.html#___construct">Chess\Piece::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="canMove" id="_canMove">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_canMove">#</a>
+		<code><a href="source-class-Chess.King.html#14-16" title="Go to source code">canMove</a>( <span><code><a href="class-Chess.ChessCell.html">Chess\ChessCell</a></code> <var>$cell</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cell</var></dt>
+					<dd><code><code><a href="class-Chess.ChessCell.html">Chess\ChessCell</a></code></code><br>$cell</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="move" id="_move">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_move">#</a>
+		<code><a href="source-class-Chess.King.html#18-20" title="Go to source code">move</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="possibleMovements" id="_possibleMovements">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_possibleMovements">#</a>
+		<code><a href="source-class-Chess.King.html#22-24" title="Go to source code">possibleMovements</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Chess.Piece.html#methods">Chess\Piece</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Chess.Piece.html#_getColor">getColor()</a>, 
+			<a href="class-Chess.Piece.html#_getPosition">getPosition()</a>, 
+			<a href="class-Chess.Piece.html#_getType">getType()</a>, 
+			<a href="class-Chess.Piece.html#_setColor">setColor()</a>, 
+			<a href="class-Chess.Piece.html#_setPosition">setPosition()</a>, 
+			<a href="class-Chess.Piece.html#_setType">setType()</a>, 
+			<a href="class-Chess.Piece.html#_toString">toString()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Core.Object.html#methods">Core\Object</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Core.Object.html#___clone">__clone()</a>, 
+			<a href="class-Core.Object.html#___get">__get()</a>, 
+			<a href="class-Core.Object.html#___set">__set()</a>, 
+			<a href="class-Core.Object.html#___toString">__toString()</a>, 
+			<a href="class-Core.Object.html#_cloneObject">cloneObject()</a>, 
+			<a href="class-Core.Object.html#_equals">equals()</a>, 
+			<a href="class-Core.Object.html#_getHashCode">getHashCode()</a>, 
+			<a href="class-Core.Object.html#_getObjectType">getObjectType()</a>, 
+			<a href="class-Core.Object.html#_instanceEquals">instanceEquals()</a>, 
+			<a href="class-Core.Object.html#_serialize">serialize()</a>, 
+			<a href="class-Core.Object.html#_unserialize">unserialize()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Magic properties inherited from <a href="class-Chess.Piece.html#properties">Chess\Piece</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Chess.Piece.html#m$color"><var>$color</var></a>, 
+			<a href="class-Chess.Piece.html#m$position"><var>$position</var></a>, 
+			<a href="class-Chess.Piece.html#m$type"><var>$type</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+</div>
+
+	<div id="footer">
+		ChessEngine API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Chess\Render\BoardRender | ChessEngine</title>
+
+	<script type="text/javascript" src="resources/combined.js?1017043969"></script>
+	<script type="text/javascript" src="elementlist.js?3349509062"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Chess.html">Chess<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-Chess.Render.html">Render</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-Core.Exceptions.html">Exceptions</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Chess.Render.BoardRender.html">BoardRender</a></li>
+				<li><a href="class-Chess.Render.PieceRender.html">PieceRender</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Chess.Render.ICacheStorage.html">ICacheStorage</a></li>
+				<li><a href="class-Chess.Render.IRender.html">IRender</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Chess.Render.html" title="Summary of Chess\Render"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class BoardRender</h1>
+
+
+	<div class="description">
+	
+<p>Třída se stará o vykreslení hrací plochy a všech figurek.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Core.Object.html"><span>Core\Object</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Chess\Render\BoardRender</span></b>			
+			 implements 
+				<a href="class-Chess.Render.IRender.html"><span>Chess\Render\IRender</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Chess.html">Chess</a>\<a href="namespace-Chess.Render.html">Render</a><br />
+		
+
+				<b>Author:</b>
+				Vladimír Antoš<br />
+				<b>Version:</b>
+				1.0<br />
+		<b>Located at</b> <a href="source-class-Chess.Render.BoardRender.html#9-108" title="Go to source code">library/Chess/Render/BoardRender.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Chess.Render.BoardRender.html#22-27" title="Go to source code">__construct</a>( <span><code><a href="class-Chess.Board.html">Chess\Board</a></code> <var>$board</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$board</var></dt>
+					<dd><code><code><a href="class-Chess.Board.html">Chess\Board</a></code></code><br>$board</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getBoard" id="_getBoard">
+
+		<td class="attributes"><code>
+			 public 
+			Board
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getBoard">#</a>
+		<code><a href="source-class-Chess.Render.BoardRender.html#29-34" title="Go to source code">getBoard</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Board</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="render" id="_render">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_render">#</a>
+		<code><a href="source-class-Chess.Render.BoardRender.html#36-65" title="Go to source code">render</a>( <span><code><a href="class-Chess.PieceColor.html">Chess\PieceColor</a></code> <var>$player</var></span>, <span><code><a href="class-Chess.ChessCell.html">Chess\ChessCell</a></code> <var>$actual</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Vykreslí celou herní plochu</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Vykreslí celou herní plochu</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$player</var></dt>
+					<dd><code><code><a href="class-Chess.PieceColor.html">Chess\PieceColor</a></code></code><br>$player Hráč který je na tahu</dd>
+					<dt><var>$actual</var></dt>
+					<dd><code><code><a href="class-Chess.ChessCell.html">Chess\ChessCell</a></code></code><br>$actual Políčko na které bylo kliknuto</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Chess.Render.IRender.html#_render">Chess\Render\IRender::render()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadCache" id="_loadCache">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadCache">#</a>
+		<code><a href="source-class-Chess.Render.BoardRender.html#94-102" title="Go to source code">loadCache</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Core.Object.html#methods">Core\Object</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Core.Object.html#___clone">__clone()</a>, 
+			<a href="class-Core.Object.html#___get">__get()</a>, 
+			<a href="class-Core.Object.html#___set">__set()</a>, 
+			<a href="class-Core.Object.html#___toString">__toString()</a>, 
+			<a href="class-Core.Object.html#_cloneObject">cloneObject()</a>, 
+			<a href="class-Core.Object.html#_equals">equals()</a>, 
+			<a href="class-Core.Object.html#_getHashCode">getHashCode()</a>, 
+			<a href="class-Core.Object.html#_getObjectType">getObjectType()</a>, 
+			<a href="class-Core.Object.html#_instanceEquals">instanceEquals()</a>, 
+			<a href="class-Core.Object.html#_serialize">serialize()</a>, 
+			<a href="class-Core.Object.html#_toString">toString()</a>, 
+			<a href="class-Core.Object.html#_unserialize">unserialize()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		ChessEngine API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

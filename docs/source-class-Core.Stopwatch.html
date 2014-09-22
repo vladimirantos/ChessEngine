@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File library/Core/Stopwatch.php | ChessEngine</title>
+
+	<script type="text/javascript" src="resources/combined.js?1017043969"></script>
+	<script type="text/javascript" src="elementlist.js?3349509062"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Chess.html">Chess<span></span></a>
+						<ul>
+				<li><a href="namespace-Chess.Render.html">Render</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-Core.Exceptions.html">Exceptions</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Core.Enum.html">Enum</a></li>
+				<li><a href="class-Core.Loader.html">Loader</a></li>
+				<li><a href="class-Core.Math.html">Math</a></li>
+				<li><a href="class-Core.MemoryInformation.html">MemoryInformation</a></li>
+				<li><a href="class-Core.Object.html">Object</a></li>
+				<li class="active"><a href="class-Core.Stopwatch.html">Stopwatch</a></li>
+				<li><a href="class-Core.StringBuilder.html">StringBuilder</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Core.html" title="Summary of Core"><span>Namespace</span></a>
+			</li>
+			<li>
+				<a href="class-Core.Stopwatch.html" title="Summary of Core\Stopwatch"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a>
+</span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-keyword1">namespace</span> Core;
+</span><span id="4" class="l"><a class="l" href="#4"> 4: </a>
+</span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment">/**
+</span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment"> * Měření délky běhu skriptu.
+</span></span><span id="7" class="l"><a class="l" href="#7"> 7: </a><span class="php-comment"> * @author Vladimír Antoš
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @version 1.0
+</span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment"> */</span>
+</span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-keyword1">final</span> <span class="php-keyword1">class</span> <a id="Stopwatch" href="#Stopwatch">Stopwatch</a> {
+</span><span id="11" class="l"><a class="l" href="#11">11: </a>
+</span><span id="12" class="l"><a class="l" href="#12">12: </a>    <span class="php-comment">/**
+</span></span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-comment">     * @var array
+</span></span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-comment">     */</span>
+</span><span id="15" class="l"><a class="l" href="#15">15: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-var"><a id="$timers" href="#$timers">$timers</a></span> = <span class="php-keyword1">array</span>();
+</span><span id="16" class="l"><a class="l" href="#16">16: </a>    
+</span><span id="17" class="l"><a class="l" href="#17">17: </a>    <span class="php-comment">/**
+</span></span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment">     * @var array
+</span></span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment">     */</span>
+</span><span id="20" class="l"><a class="l" href="#20">20: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-var"><a id="$timers_start" href="#$timers_start">$timers_start</a></span> = <span class="php-keyword1">array</span>();
+</span><span id="21" class="l"><a class="l" href="#21">21: </a>
+</span><span id="22" class="l"><a class="l" href="#22">22: </a>    <span class="php-comment">/**
+</span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment">     * @param string $name
+</span></span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-comment">     */</span>
+</span><span id="25" class="l"><a class="l" href="#25">25: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_start" href="#_start">start</a>(<span class="php-var">$name</span>) {
+</span><span id="26" class="l"><a class="l" href="#26">26: </a>        self::<span class="php-var">$timers_start</span>[<span class="php-var">$name</span>] = self::getMicrotime();
+</span><span id="27" class="l"><a class="l" href="#27">27: </a>    }
+</span><span id="28" class="l"><a class="l" href="#28">28: </a>
+</span><span id="29" class="l"><a class="l" href="#29">29: </a>    <span class="php-comment">/**
+</span></span><span id="30" class="l"><a class="l" href="#30">30: </a><span class="php-comment">     * @param string $name
+</span></span><span id="31" class="l"><a class="l" href="#31">31: </a><span class="php-comment">     */</span>
+</span><span id="32" class="l"><a class="l" href="#32">32: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_stop" href="#_stop">stop</a>(<span class="php-var">$name</span>) {
+</span><span id="33" class="l"><a class="l" href="#33">33: </a>        <span class="php-var">$microtime</span> = self::getMicrotime() - self::<span class="php-var">$timers_start</span>[<span class="php-var">$name</span>];
+</span><span id="34" class="l"><a class="l" href="#34">34: </a>        self::add(<span class="php-var">$microtime</span>, <span class="php-var">$name</span>);
+</span><span id="35" class="l"><a class="l" href="#35">35: </a>    }
+</span><span id="36" class="l"><a class="l" href="#36">36: </a>
+</span><span id="37" class="l"><a class="l" href="#37">37: </a>    <span class="php-comment">/**
+</span></span><span id="38" class="l"><a class="l" href="#38">38: </a><span class="php-comment">     * @param int $time
+</span></span><span id="39" class="l"><a class="l" href="#39">39: </a><span class="php-comment">     * @param string $name
+</span></span><span id="40" class="l"><a class="l" href="#40">40: </a><span class="php-comment">     */</span>
+</span><span id="41" class="l"><a class="l" href="#41">41: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_add" href="#_add">add</a>(<span class="php-var">$time</span>, <span class="php-var">$name</span>) {
+</span><span id="42" class="l"><a class="l" href="#42">42: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$name</span> === <span class="php-keyword1">NULL</span>)
+</span><span id="43" class="l"><a class="l" href="#43">43: </a>            <span class="php-var">$name</span> = <span class="php-keyword2">uniqid</span>();
+</span><span id="44" class="l"><a class="l" href="#44">44: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(self::<span class="php-var">$timers</span>[<span class="php-var">$name</span>]))
+</span><span id="45" class="l"><a class="l" href="#45">45: </a>            self::<span class="php-var">$timers</span>[<span class="php-var">$name</span>]+= <span class="php-var">$time</span>;
+</span><span id="46" class="l"><a class="l" href="#46">46: </a>        <span class="php-keyword1">else</span>
+</span><span id="47" class="l"><a class="l" href="#47">47: </a>            self::<span class="php-var">$timers</span>[<span class="php-var">$name</span>] = <span class="php-var">$time</span>;
+</span><span id="48" class="l"><a class="l" href="#48">48: </a>    }
+</span><span id="49" class="l"><a class="l" href="#49">49: </a>
+</span><span id="50" class="l"><a class="l" href="#50">50: </a>    <span class="php-comment">/**
+</span></span><span id="51" class="l"><a class="l" href="#51">51: </a><span class="php-comment">     * Vrací čas v mikrosekundách
+</span></span><span id="52" class="l"><a class="l" href="#52">52: </a><span class="php-comment">     * @return int
+</span></span><span id="53" class="l"><a class="l" href="#53">53: </a><span class="php-comment">     */</span>
+</span><span id="54" class="l"><a class="l" href="#54">54: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_getMicrotime" href="#_getMicrotime">getMicrotime</a>() {
+</span><span id="55" class="l"><a class="l" href="#55">55: </a>        <span class="php-keyword1">list</span>(<span class="php-var">$usec</span>, <span class="php-var">$sec</span>) = <span class="php-keyword2">explode</span>(<span class="php-quote">&quot; &quot;</span>, <span class="php-keyword2">microtime</span>());
+</span><span id="56" class="l"><a class="l" href="#56">56: </a>        <span class="php-keyword1">return</span> ((float) <span class="php-var">$usec</span> + (float) <span class="php-var">$sec</span>);
+</span><span id="57" class="l"><a class="l" href="#57">57: </a>    }
+</span><span id="58" class="l"><a class="l" href="#58">58: </a>
+</span><span id="59" class="l"><a class="l" href="#59">59: </a>    <span class="php-comment">/**
+</span></span><span id="60" class="l"><a class="l" href="#60">60: </a><span class="php-comment">     * @return string
+</span></span><span id="61" class="l"><a class="l" href="#61">61: </a><span class="php-comment">     */</span>
+</span><span id="62" class="l"><a class="l" href="#62">62: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_getTab" href="#_getTab">getTab</a>() {
+</span><span id="63" class="l"><a class="l" href="#63">63: </a>        <span class="php-var">$sum</span> = <span class="php-keyword2">number_format</span>(<span class="php-keyword2">round</span>(<span class="php-keyword2">array_sum</span>(self::<span class="php-var">$timers</span>) * <span class="php-num">1000</span>, <span class="php-num">1</span>), <span class="php-num">1</span>);
+</span><span id="64" class="l"><a class="l" href="#64">64: </a>        <span class="php-keyword1">return</span> <span class="php-quote">'&lt;span&gt;&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACiUlEQVQ4jY2Sy08TYRTFz/fNtDPTMm1hxoKQIg02KUVBBMIjEHXr1sS4cgEhmuCOldsm4iOufEQTWbEy9Q+AhJ0sLdHURSUQXraBaUunzyFDO/O5kkRaEs/q5uTcX27uvQQXaG1tbXR7e3OsVqtDkhxf5+bmE81ytJkZj8cdmaOj2y+fvzp9sfjMMk9qd2OxGNcsyzczXS6XJ184TlOOfiQc5VR/x5NQKCQDKPwXIBKJHEej0a43b9//0A7Tp4QQ/9DQUEPzPwBFUUZs276n6/rTZDIrWyjmchntCqU87/OpX9bXE63T0wP6eQD5WwQCgSWfzzMTjS4uuiTpcdUoK5IogAEolcoo5gul/oHBhampyaWmAABkZWX1U07TZlsVH9oUFZVyGZZVh6r6UTUq+L4RZ+OTt+YnJsY+/G06u0I6nVYcHH+/uyeAcF8EjAGSJMHj8YJ38AgGe3FzZJT8TGy83t/f72wACIL7QSq1L1PKIZPJwu+/BOOkimxWgyRJKBR0CE4BLW7ZVS6XHzYsMZ/LDPu8HiiKihZZhmEYoJSDw+kEIQRtbQryDLgaCiGnHQ43TGCcGE6O55FK/QZjDKIoQhQF8DwHUZRAKUWtdgqe4yCIktAA8Ld3bGqahsudXcjlsgCA7kAPwuF+cBwHXc/DKQioVCto8Xi3GgCmacUYqLWzswVKKEzTBAODZdkwTRO2baNULAKEMIfD9bkBEAx2/Rodn3qXOjhAxahgb28Xuq4jm8ng6OgQej6PulWHW/Yuh8O93xqWCACD1/sWmM3cyWRi1iWJpFDQYVt12CAAI8zXqsZkt/vRRY90puTW7h39+Hgmox0OMgYq+zwJVW1fvnEtvHo++wf3HgDktqhaIgAAAABJRU5ErkJggg==&quot;&gt;&lt;strong&gt;Timers&lt;/strong&gt; ('</span> . <span class="php-var">$sum</span> . <span class="php-quote">' ms)&lt;/span&gt;'</span>;
+</span><span id="65" class="l"><a class="l" href="#65">65: </a>    }
+</span><span id="66" class="l"><a class="l" href="#66">66: </a>
+</span><span id="67" class="l"><a class="l" href="#67">67: </a>    <span class="php-comment">/**
+</span></span><span id="68" class="l"><a class="l" href="#68">68: </a><span class="php-comment">     * @return string
+</span></span><span id="69" class="l"><a class="l" href="#69">69: </a><span class="php-comment">     */</span>
+</span><span id="70" class="l"><a class="l" href="#70">70: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_getPanel" href="#_getPanel">getPanel</a>() {
+</span><span id="71" class="l"><a class="l" href="#71">71: </a>        <span class="php-var">$sum</span> = <span class="php-keyword2">number_format</span>(<span class="php-keyword2">round</span>(<span class="php-keyword2">array_sum</span>(self::<span class="php-var">$timers</span>) * <span class="php-num">1000</span>, <span class="php-num">1</span>), <span class="php-num">1</span>);
+</span><span id="72" class="l"><a class="l" href="#72">72: </a>        <span class="php-var">$buff</span> = <span class="php-quote">'&lt;h1&gt;&lt;img style=&quot;vertical-align: middle; position: relative; top: -4px; left: -2px;&quot; src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAHwUlEQVRYhbWX/W9T5xXHv89zX+3r2IntvNiOncR5cUISFsJ4SykKMFhGpaFu04pE0ajYitpqGv/AKm3SpknTpq3VuqpSJ1Z+gqkD0ZWmrLRrCRsElyQ0JeE1sUNix3Zsx+8v995nP0DZWqDElXqk54er89zv+TznPPfqHIKvYMeOHeO8Xu9QLB7ZopZU1WKp+WDz5s1nCCGsUi1S6QuTk5PWubm5v58/f25ycnLypCAI1Ott3tPiaTR3r163d2BgIF+pZkV2bmTk6KFDP91795G/u7B3755DJ47/7ZWvNfj09LT9yBtvjAEgPp/viMvpTDXU21Nut/M4AHr4L69fGRmZqqpEk1ay2WSyupfisSkAjDH2LUHgqnhBqNJ0bRMAnReFGYMh1/K1AaTTS4uSKLgBgDComqpB13QARAZAZNnokiTpdiWaFV/Cl//4h1NjE5d/x3Fy2/d/sPvVhcAMTp1+/2mvt1nbtWvX9wYHB39YiR5fKYAoGw44GxqO2WrrAr09vcxslEkourSltbWlhzG2u1K9h5VAstlsLzmdTtsXHQcPHgxZamqG2ts752/cuI7wYox1dXUzGuO/vXXr1lilAPeVYNWqVaZIJHKyVCoOyrLh55FI5Fef+W5dndtQRPknDNheyBc8sWiU6LpGjLKB8YK4BEre4yleX7++/72vDNDW1nY8mUzszmazRFGMzOfr2nL08NFAgWivpFKpJ67fuEqymRQkSYQkyVBVFZqmIpvNIZtKoqm5nblcTRckA32+r69vrGKA3t7exnw+/9t8Prfnmf0/gsPl8e/cOeT9ZGLMGl4MwdPkhkGWYTQaoJZUUI4D4ShKxRKKxRIujJxFLp/D0K4nC9a62p+t7ul6rSKAu8Y/99wL+zas2/D7VCZbbTHJsNqt0KHD6WyErcYKBoaTJ06A5znsHPoOBEFEPB5HOLQAVS1h+B9v4Yknn2JNLS3Pr+7uevVhAA+7hOqLL/5ydMfOHbwicXA66qCYFJSLJUyMjyGTzYLjeFjMVdA1DaIgQpZlXPr4InydXbDaa/HUvqfx5tEjJLYYeWlq6vrWigAYY4QSdvg//z5ncjQ6YDCZ0NbajuYWLyyWasRiUWQzGTgb3XC7PSgUi8jn83A6XVCMRjQ3t4DnROzbfwBHDr8mUKr/2e/3CysGWFyMfXdpaWnt/FwAlKMwVZlRLJXgdLowMPAYjEYDFhbmoSgmKCYTAIZodBF9a/qhM4ZcNgeOF0CYjk2PbcG5sx92WC32/SsG4Hnhx6fefot0dvtQXW2Ff/Q8Rs59hHg8DlUtw2y2oMHhQCBwA1eufAKO42Gz2lEul0AIwejoeUx/Oom6unqsXduPiYlxAk5/dkUAwWDQwFE6GA7Pw2K2wOl0obvnG2hv7YDFYgEA6LqOaCwKxVQFylFEo4tIJhPQNB2apmHjxgH0rO5DtdUGSgiaPc2IL8XWzM7OOu477H1ElHam00nFpBghyQZwHIfmlhZomgZN0wAQJBIJCLwARbGg3uGC0agglUqjThDAGIPRaISiKAAAQgk6ulYhtHCbs9lr1wAIfWkGJElyL4ZCxO1yQhREJOJLmBgfA2N3ui3GGBwOJxRFQXghiPnbQeg6g9vtBiF3vmpCCIKBAMb9FyHLMurqakEBUMo3PrIE5YIuFEpFgPAoFLK4OHoeY2OXPreH4ziYzRaUSllAzaOqSgGld6R4nr8HEQ4vIJNOg+coOIEDY5r4yBKUtHLSbLYgsZyEbDRh+44h6Lp+N/3/M0IIXO4OSIZFUMp9zscYg6epCZ6mJkQiYahlFQaDCYyRzCMBMpni9br6Bn1mZoZqZRWqqt473f8H53kOHe3taG3zQhSlO+mkFISQe6XQdR0Aw/JyAtXVVqaqpatfjHdfCbq7vXMAnaEcRSaTQj6fx7Vr1zBy9kMsJ5P3AAihECUJBtkIQsg9SF3XMfzuOxgePgW1XIam6kgkkzBXVaclSRp/JAAhhJWL5WPr12/ERb8fN29dR2D2FjhKIUoiKKUPzMhnEIzpqLXbYK2uRiAwCwBQjAoYISc8Hs99LfsDf0T5YvpPjz++LfvxRT+YpqK7pxcDm7dAFCWEQiGkUylQSpFOLyMSWQQAlMtlBAMBRKNR9PevQ2u7D4rRiHBoAY5Gj65p5ZcfFOuBAD6fbx6E/ubAsy+w08PDWIqFkUgkkMlm8K8P3sdCKATGGBgj4DgejDFkMmlcvjyOuWAQ6fQy0qkkUpkMzJYaiLz4166uLv+DYj20KfX7/UKN3Xn68qXRwakrl9D/zQ1QVRU2Wy1qampgMlXhn6ffBaUEvav7YDGbEU/EEQ6HYLfbUSwVoZY11DvdVySeburo6EhVBHAH4qbFXCO+Mxe8uWnkozPo7FyF2to6GAwGmM0WhELzyOeyaG/3IZvPoFgooVxWkUzEYa62wlZbf4MybXtPT0/wYTEe2ZaPj48rslLzciGf2z926QJJLcfhcDTCYBTBczxKpRwkSYGmMSwvL0NRquBwuZgkG9+WePJMZ2fnlzaqK54Lpqdnt+kUvygVipsW5oNcfCmCXC4HQilEQYDJYkFDvZMpJtMYB+7Xvb0db65Et+LBZGJqyseKZFtZL/XpuuZgDAQgMcbUcU7kz6zv6/sUwIrH9P8CNlMtNRG2fHEAAAAASUVORK5CYII=&quot;&gt;Stopwatch&lt;/h1&gt;'</span>;
+</span><span id="73" class="l"><a class="l" href="#73">73: </a>        <span class="php-var">$buff</span> .= <span class="php-quote">'&lt;div&gt;'</span>;
+</span><span id="74" class="l"><a class="l" href="#74">74: </a>        <span class="php-var">$buff</span> .= <span class="php-quote">'&lt;table&gt;'</span>;
+</span><span id="75" class="l"><a class="l" href="#75">75: </a>        <span class="php-keyword1">foreach</span> (self::<span class="php-var">$timers</span> <span class="php-keyword1">as</span> <span class="php-var">$name</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="76" class="l"><a class="l" href="#76">76: </a>            <span class="php-var">$buff</span> .= <span class="php-quote">&quot;&lt;tr&gt;&lt;th&gt;</span><span class="php-var">$name</span><span class="php-quote">&lt;/th&gt;&lt;td style='text-align: right;'&gt;&quot;</span> . <span class="php-keyword2">number_format</span>(<span class="php-keyword2">round</span>(<span class="php-var">$value</span> * <span class="php-num">1000</span>, <span class="php-num">1</span>), <span class="php-num">1</span>) . <span class="php-quote">&quot; ms&lt;/td&gt;&lt;/tr&gt;&quot;</span>;
+</span><span id="77" class="l"><a class="l" href="#77">77: </a>        }
+</span><span id="78" class="l"><a class="l" href="#78">78: </a>        <span class="php-var">$buff</span> .= <span class="php-quote">&quot;&lt;tr&gt;&lt;th style='color: green;'&gt;&amp;sum;&lt;/th&gt;&lt;td style='color: green; text-align: right; border-top: 3px double #888;'&gt;&quot;</span> . <span class="php-var">$sum</span> . <span class="php-quote">&quot; ms&lt;/th&gt;&lt;/tr&gt;&quot;</span>;
+</span><span id="79" class="l"><a class="l" href="#79">79: </a>        <span class="php-var">$buff</span> .= <span class="php-quote">'&lt;/table&gt;'</span>;
+</span><span id="80" class="l"><a class="l" href="#80">80: </a>        <span class="php-var">$buff</span> .= <span class="php-quote">'&lt;/div&gt;'</span>;
+</span><span id="81" class="l"><a class="l" href="#81">81: </a>        <span class="php-keyword1">return</span> <span class="php-var">$buff</span>;
+</span><span id="82" class="l"><a class="l" href="#82">82: </a>    }
+</span><span id="83" class="l"><a class="l" href="#83">83: </a>
+</span><span id="84" class="l"><a class="l" href="#84">84: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getId" href="#_getId">getId</a>() {
+</span><span id="85" class="l"><a class="l" href="#85">85: </a>        <span class="php-keyword1">return</span> <span class="php-quote">'Stopwatch'</span>;
+</span><span id="86" class="l"><a class="l" href="#86">86: </a>    }
+</span><span id="87" class="l"><a class="l" href="#87">87: </a></span>}</code></pre>
+
+	<div id="footer">
+		ChessEngine API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

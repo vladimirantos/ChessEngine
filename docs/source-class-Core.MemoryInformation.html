@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File library/Core/MemoryInformation.php | ChessEngine</title>
+
+	<script type="text/javascript" src="resources/combined.js?1017043969"></script>
+	<script type="text/javascript" src="elementlist.js?3349509062"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Chess.html">Chess<span></span></a>
+						<ul>
+				<li><a href="namespace-Chess.Render.html">Render</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-Core.Exceptions.html">Exceptions</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Core.Enum.html">Enum</a></li>
+				<li><a href="class-Core.Loader.html">Loader</a></li>
+				<li><a href="class-Core.Math.html">Math</a></li>
+				<li class="active"><a href="class-Core.MemoryInformation.html">MemoryInformation</a></li>
+				<li><a href="class-Core.Object.html">Object</a></li>
+				<li><a href="class-Core.Stopwatch.html">Stopwatch</a></li>
+				<li><a href="class-Core.StringBuilder.html">StringBuilder</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Core.html" title="Summary of Core"><span>Namespace</span></a>
+			</li>
+			<li>
+				<a href="class-Core.MemoryInformation.html" title="Summary of Core\MemoryInformation"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a>
+</span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-keyword1">namespace</span> Core;
+</span><span id="4" class="l"><a class="l" href="#4"> 4: </a>
+</span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment">/**
+</span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment"> * Třída získává informace o velikosti paměti, kterou potřebuje běžící php skript.
+</span></span><span id="7" class="l"><a class="l" href="#7"> 7: </a><span class="php-comment"> * @author Vladimír Antoš
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @version 1.0
+</span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment"> */</span>
+</span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-keyword1">class</span> <a id="MemoryInformation" href="#MemoryInformation">MemoryInformation</a> <span class="php-keyword1">extends</span> Object{
+</span><span id="11" class="l"><a class="l" href="#11">11: </a>    
+</span><span id="12" class="l"><a class="l" href="#12">12: </a>    <span class="php-comment">/**
+</span></span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-comment">     * Return bytes
+</span></span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-comment">     * @return int
+</span></span><span id="15" class="l"><a class="l" href="#15">15: </a><span class="php-comment">     */</span>
+</span><span id="16" class="l"><a class="l" href="#16">16: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_getMemory" href="#_getMemory">getMemory</a>(){
+</span><span id="17" class="l"><a class="l" href="#17">17: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">memory_get_usage</span> ();
+</span><span id="18" class="l"><a class="l" href="#18">18: </a>    }
+</span><span id="19" class="l"><a class="l" href="#19">19: </a>    
+</span><span id="20" class="l"><a class="l" href="#20">20: </a>    <span class="php-comment">/**
+</span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment">     * Return bytes
+</span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment">     * @return int
+</span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment">     */</span>
+</span><span id="24" class="l"><a class="l" href="#24">24: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_getRealMemory" href="#_getRealMemory">getRealMemory</a>(){
+</span><span id="25" class="l"><a class="l" href="#25">25: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">memory_get_usage</span>(<span class="php-keyword1">true</span>);
+</span><span id="26" class="l"><a class="l" href="#26">26: </a>    }
+</span><span id="27" class="l"><a class="l" href="#27">27: </a>    
+</span><span id="28" class="l"><a class="l" href="#28">28: </a>    <span class="php-comment">/**
+</span></span><span id="29" class="l"><a class="l" href="#29">29: </a><span class="php-comment">     * @return string
+</span></span><span id="30" class="l"><a class="l" href="#30">30: </a><span class="php-comment">     */</span>
+</span><span id="31" class="l"><a class="l" href="#31">31: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_panel" href="#_panel">panel</a>(){
+</span><span id="32" class="l"><a class="l" href="#32">32: </a>        <span class="php-keyword1">return</span> <span class="php-quote">' &lt;img alt=&quot;&quot; src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVDhPdZP5TxtXEMf3r2quEmOMvax3vZf39HrX65PFGIy5DLZjUhQlPzUJShBJMKYGh2DsmByoVFV+qdo/IpHyQ8+kai5EFUUkSNPZnOoPjDSa91b7mTfzfW+IT6aI5KzE+yuSSK0oYsCL+64kkqYiUm1J8GsyTy3KQqAo86Sj8NRFiSPNj+gHE0PeWYY8VeEZby0Y+MqLscsEPaYY8rVZ+mtNDPUvCqG+YpjpcyQucFFiA8Z7UBUHymHOfy4eU/8cTFtPM6noi3Qy+jhh63sJW/vNNpW9mCn/akXCz01dfBLV+D80mX6mSfRDiQ9U3dKnafLkhTPlafjl55/gh90d2P3+Puzc24b797pwp7uF3oLb7Q3otJrQbq3j+ibEo9IbkfVVMMHAPOU/eencfPmdC89VKzD/TRVjCSqYtDQzAcWpPEwWhqEw6sBQJgbtzTWM0X2O6TtPKAKZIn3Hp+bnSm+3u22YnBiD4vQ4TI6PQiGfhdFcBoadBDjpGKQTBkR1ARr1JXBSxisu2JslZJG8FaJ67p6tzhze7rRgvDACU5N5GB/LQX7EgVw2BUODNmSSUUjaGkRUDlZrizCY0F9jC1uEJJCs33PMPluZPuhs3UJo6AhYB9uUQZVoqC9fwWq05wzVG3Y1uMsGe36slqcOW5tNhNJHwmZEAIknYfnaAqTi6psw59tBDQJxqv/ExJnSxNvNjQaKE/8Cp8z/wRElBELIB8vXF9wKXvL4Jtxr/I6lPFvlmcLhRnMV0knzSFgNU4DQxwT6a4H1rRNymFTI/uNOqTh20FyrQSKmfxbMNiUwUXUXxlZBFkjgsYL68lVwMtYLlu41sIWBbxmy53qpmH93c70OsaiM/UUgbilgGSIYKguaFAQFT1cxSsIANPG/kVz6X57uW3Cv8RIX9KyMDifx9XWgsXoN1tDdU1ZuXIEbS5dRtA9eQ/UbjRrsPngAubH8ARc8fRUroCzMmtUl5qmp8c8sQ9gzdf53Qw3t6wrzRJfp/YjM/BVRmFeGzv9jx/S/09nMy3jCehSmvYn3A+UaDkYZBZoTOX8dp86Po72NaxuvrYNiGTiBS/htVmB6szzlWRCo0xZBEMR/2F7yXxzCBEEAAAAASUVORK5CYII=&quot; /&gt;'</span>
+</span><span id="33" class="l"><a class="l" href="#33">33: </a>        . <span class="php-quote">'&lt;b&gt; Memory usage&lt;/b&gt; '</span>.self::convert(self::getMemory()).<span class="php-quote">' (real '</span>.self::convert(self::getRealMemory()).<span class="php-quote">')'</span>;
+</span><span id="34" class="l"><a class="l" href="#34">34: </a>    }
+</span><span id="35" class="l"><a class="l" href="#35">35: </a>    
+</span><span id="36" class="l"><a class="l" href="#36">36: </a>    <span class="php-comment">/**
+</span></span><span id="37" class="l"><a class="l" href="#37">37: </a><span class="php-comment">     * @param int $size
+</span></span><span id="38" class="l"><a class="l" href="#38">38: </a><span class="php-comment">     * @return string
+</span></span><span id="39" class="l"><a class="l" href="#39">39: </a><span class="php-comment">     */</span>
+</span><span id="40" class="l"><a class="l" href="#40">40: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_convert" href="#_convert">convert</a>(<span class="php-var">$size</span>){
+</span><span id="41" class="l"><a class="l" href="#41">41: </a>        <span class="php-var">$unit</span>=<span class="php-keyword1">array</span>(<span class="php-quote">'b'</span>,<span class="php-quote">'kb'</span>,<span class="php-quote">'mb'</span>,<span class="php-quote">'gb'</span>,<span class="php-quote">'tb'</span>,<span class="php-quote">'pb'</span>);
+</span><span id="42" class="l"><a class="l" href="#42">42: </a>        <span class="php-keyword1">return</span> @<span class="php-keyword2">round</span>(<span class="php-var">$size</span>/<span class="php-keyword2">pow</span>(<span class="php-num">1024</span>,(<span class="php-var">$i</span>=<span class="php-keyword2">floor</span>(<span class="php-keyword2">log</span>(<span class="php-var">$size</span>,<span class="php-num">1024</span>)))),<span class="php-num">2</span>).<span class="php-quote">' '</span>.<span class="php-var">$unit</span>[<span class="php-var">$i</span>];
+</span><span id="43" class="l"><a class="l" href="#43">43: </a>    }
+</span><span id="44" class="l"><a class="l" href="#44">44: </a></span>}</code></pre>
+
+	<div id="footer">
+		ChessEngine API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
